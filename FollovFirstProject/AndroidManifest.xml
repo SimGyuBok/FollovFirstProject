@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.follov"
+      android:versionCode="1"
+      android:versionName="1.0">
+      
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    
+    <permission
+        android:name="com.dante2k.piyak.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.dante2k.piyak.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    
+    <application 
+        android:icon="@drawable/icon" 
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar">
+    
+        <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
+        
+		<receiver android:name="MySimpleWidget">
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+			</intent-filter>
+			<meta-data android:resource="@xml/simplewidget" 
+				android:name="android.appwidget.provider"/>
+		</receiver>
+		
+		<receiver android:name="LoveCokBroadcastReceiver">
+		    <intent-filter>
+				<action android:name="com.follov.ACTION_LOVECOK"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+		    </intent-filter>
+		</receiver>
+		
+		<service android:name="LoveCokService" android:exported="false">
+		    <intent-filter>
+		        <action android:name="com.androidhuman.example.SimpleWidget"/>
+		    </intent-filter>
+		</service>
+		
+		<activity android:name="LoveCokActivity" 
+		    android:theme="@android:style/Theme.Dialog">		    
+		</activity>
+		
+		<activity android:name="MainActivity">
+		    <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+	</application>
+	
+    <uses-sdk android:minSdkVersion="8"/>
+    
+</manifest> 

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_height="fill_parent"
+	android:layout_width="fill_parent"
+	>
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:textSize="20dp"
+        android:id="@+id/cancelCnt"
+        />
+	<TextView
+		android:layout_width="250dp"
+		android:layout_height="100dp"
+		android:gravity="center"
+		android:text="I miss you."
+		android:textSize="20dp"
+		android:id="@+id/love_message"
+		/>
+	<LinearLayout
+	    android:orientation="horizontal"
+		android:layout_height="fill_parent"
+		android:layout_width="fill_parent"
+		android:layout_gravity="center_horizontal"
+		android:gravity="center"
+		>
+	    <Button
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="me, too."
+		    android:id="@+id/confirmBtn"
+	 	/>
+		<Button
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="cancel"
+		    android:id="@+id/cancelBtn"
+		 />
+	</LinearLayout>
+	
+</LinearLayout>
